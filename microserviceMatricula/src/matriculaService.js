@@ -14,8 +14,8 @@ exports.register = function(params){
     }
 }
 
-exports.list = function(curso){
-    console.log(curso);
-    const matricula = Matricula.find({ curso: curso }).exec();
+exports.list = async function(params){
+    console.log(params);
+    const matricula = await Matricula.find({ alumno: params.alumno }).lean().exec();
     return matricula;
 }

@@ -10,8 +10,8 @@ exports.register = function(req, res){
     }
 }
 
-exports.listMatricula = function(req, res){
-    let {curso} = req.body;
-    const data = matriculaService.list(curso);
+exports.listMatricula = async function(req, res){
+    let alumno = req.body;
+    const data = await matriculaService.list(alumno);
     res.json(data);
 }
